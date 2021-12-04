@@ -1,20 +1,19 @@
 package com.company;
 
-import java.util.ArrayList;
+public class RC extends Question{
+    private String bonneReponse;
 
-public class RC {
-    ArrayList<String> question;
     public RC(){
-        this.question = new ArrayList<String>();
+        super();
     }
 
-    public void input(String enonce,String bonne_reponse,String difficulte){
-        question.add(enonce);
-        question.add(bonne_reponse);
-        question.add(difficulte);
+    public void input(String theme, String difficulte, String enonce,String bonneReponse){
+        super.input(theme, difficulte, enonce);
+        this.bonneReponse = bonneReponse;
     }
 
     public String toString(){
-        return(question.get(0)+"\n");
+        return("Question "+numero+" : "+theme+", "+difficulte+", \n"+enonce+"\n Réponse : "+bonneReponse);
     }
+
 }

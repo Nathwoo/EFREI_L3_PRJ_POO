@@ -1,24 +1,25 @@
 package com.company;
 
-import java.util.ArrayList;
+public class QCM extends Question{
+    private String reponse1;
+    private String reponse2;
+    private String reponse3;
+    private String bonneReponse;
 
-public class QCM {
-    ArrayList<String> question;
     public QCM(){
-        this.question = new ArrayList<String>();
+        super();
     }
 
-    public void input(String enonce,String reponse1,String reponse2,String reponse3,String bonne_reponse,String difficulte){
-        question.add(enonce);
-        question.add(reponse1);
-        question.add(reponse2);
-        question.add(reponse3);
-        question.add(bonne_reponse);
-        question.add(difficulte);
+    public void input(String theme, String difficulte, String enonce, String reponse1, String reponse2, String reponse3, String bonneReponse){
+        super.input(theme, difficulte, enonce);
+        this.reponse1 = reponse1;
+        this.reponse2 = reponse2;
+        this.reponse3 = reponse3;
+        this.bonneReponse = bonneReponse;
     }
 
     public String toString(){
-        return(question.get(0)+"\n"+question.get(1)+"\n"+question.get(2)+"\n"+question.get(3));
+        return("Question "+numero+" : "+theme+", "+difficulte+", \n"+enonce+"\n 1."+reponse1+"\n 2."+reponse2+"\n 3."+reponse3+"\n Réponse : "+bonneReponse);
     }
 
 }

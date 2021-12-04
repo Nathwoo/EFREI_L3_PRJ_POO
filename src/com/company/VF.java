@@ -1,20 +1,17 @@
 package com.company;
 
-import java.util.ArrayList;
-
-public class VF {
-    ArrayList<String> question;
+public class VF extends Question{
+    private boolean bonneReponse;
     public VF(){
-        this.question = new ArrayList<String>();
+        super();
     }
 
-    public void input(String enonce,String bonne_reponse,String difficulte){
-        question.add(enonce);
-        question.add(bonne_reponse);
-        question.add(difficulte);
+    public void input(String theme, String difficulte, String enonce,boolean bonneReponse){
+        super.input(theme, difficulte, enonce);
+        this.bonneReponse = bonneReponse;
     }
 
     public String toString(){
-        return(question.get(0)+"\n Vrai \n Faux \n");
+        return("Question "+numero+" : "+theme+", "+difficulte+", \n"+enonce+"\n Réponse : "+bonneReponse);
     }
 }

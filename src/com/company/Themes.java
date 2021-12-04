@@ -1,20 +1,28 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class Themes {
-    ArrayList<String> themes;
+    public final int nbThemes;
+    private String[] noms;
+    private boolean[] indicateurs;
 
-    public Themes(ArrayList<String> themes){
-        this.themes = themes;
+    public Themes(String[] noms){
+        this.noms = noms;
+        nbThemes = noms.length;
+        indicateurs = new boolean[nbThemes];
     }
 
     public int selectTheme(){
-        int max = themes.size();
-        return((int)Math.random()*(max+1));
+        int max = noms.length;
+        int indice = (int)Math.random()*(max+1);
+        indicateurs[indice] = true;
+        return(indice);
     }
 
-    public int[] selectFiveThemes(){
+    public String[] getNoms() {
+        return noms;
+    }
+
+    /*public int[] selectFiveThemes(){
         String[] result = new String[5];
         for (int i=0; i<5; i++){
             int indicetheme = selectTheme();
@@ -31,5 +39,5 @@ public class Themes {
                 }
             }
         }
-    }
+    }*/
 }
