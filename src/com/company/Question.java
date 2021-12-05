@@ -25,4 +25,8 @@ public abstract class Question {
     public String getTheme() {
         return theme;
     }
+
+    public String getDifficulte() {
+        return difficulte;
+    }
 }

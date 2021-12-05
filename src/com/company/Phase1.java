@@ -4,25 +4,47 @@ import java.util.ArrayList;
 
 public class Phase1 implements Phase{
     public int nbJoueurs = 4;
-    public int nbThemes = 10;
-    public Joueur[] joueurs;
+    public int nbTours = 4;
+    public String difficulte = "facile";
+    public Joueurs joueurs;
     public Themes themes;
     public Questions tabQuestion;
 
     @Override
     public Joueur[] selectJoueurs() {
+        Joueur[] selectionJoueurs = joueurs.selectJoueurs(nbJoueurs);
+        return selectionJoueurs;
+    }
+
+    @Override
+    public Joueur[] playPhase(Joueur[] selectionJoueurs) {
+        System.out.println("PHASE 1\n");
         Joueur[] result = new Joueur[3];
-        int scoreMin = joueurs[0].getScore();
+
+        for (int i=0; i<nbTours; i++){
+            System.out.println("TOUR "+(i+1)+"\n");
+            int indiceTheme = themes.selectTheme();
+            System.out.println("Thème : "+themes.getNoms()[indiceTheme]+"\n");
+            System.out.println("Questions :\n");
+            for (int j=0; j<nbJoueurs; j++){
+                Question Q = tabQuestion.selectQuestion(indiceTheme, difficulte);
+                System.out.println(Q.toString()+"\n");
+                if (Math.random()<0.5){
+                    selectionJoueurs[j].updateScore(2);
+                }
+            }
+        }
+        int scoreMin = selectionJoueurs[0].getScore();
         int indicePerdant = 0;
         //int[] scores = new int[4];
         for (int i =0; i<nbJoueurs; i++){
             //scores[i] = joueurs[i].getScore();
-            if (joueurs[i].getScore() < scoreMin){
+            if (selectionJoueurs[i].getScore() < scoreMin){
                 indicePerdant = i;
             }
         }
-        joueurs[indicePerdant].setEtat("éliminé");
-        for (Joueur i : joueurs){
+        selectionJoueurs[indicePerdant].setEtat("éliminé");
+        for (Joueur i : selectionJoueurs){
             int j = 0;
             if (i.getEtat() == "sélectionné"){
                 i.setEtat("gagnant");
@@ -31,23 +53,6 @@ public class Phase1 implements Phase{
             }
         }
         return result;
-    }
 
-    @Override
-    public void playPhase() {
-        String[] selectionThemes = themes.selectThemes(nbThemes);
-        joueurs = Joueurs.selectJoueurs(nbJoueurs);
-        Question[] selectionQuestions = new Question[nbThemes];
-        for (Question i : selectionQuestions){
-            for (String j : selectionThemes){
-                int indiceListe = 0;
-                ArrayList<Question> listeQuestions = tabQuestion.tableauQuestions[indiceListe];
-                Question question = listeQuestions.get(0);
-                if (question.getTheme()==j){
-
-                }
-            }
-
-        }
     }
 }

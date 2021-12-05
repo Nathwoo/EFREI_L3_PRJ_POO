@@ -13,7 +13,7 @@ public class Themes {
 
     public int selectTheme(){
         int max = noms.length;
-        int indice = (int)Math.random()*(max+1);
+        int indice = (int)(Math.random()*max);
         indicateurs[indice] = true;
         return(indice);
     }

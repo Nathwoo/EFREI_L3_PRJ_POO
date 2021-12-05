@@ -6,6 +6,6 @@ public interface Phase {
 
     Joueur[] selectJoueurs();
 
-    void playPhase();
+    Joueur[] playPhase(Joueur[] joueurs);
 
 }

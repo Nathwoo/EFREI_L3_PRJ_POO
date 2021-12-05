@@ -42,4 +42,38 @@ public class Questions {
         return result;
     }
 
+    public Question selectQuestion(int indiceListe, String difficulte){
+        ArrayList<Question> listeQuestions = tableauQuestions[indiceListe];
+        ArrayList<Question> selection = new ArrayList();
+        for (Question q : listeQuestions){
+            if (q.getDifficulte() == difficulte){
+                selection.add(q);
+            }
+        }
+        int max = selection.size();
+        int indice = (int)(Math.random()*max);
+        return selection.get(indice);
+
+    }
+
+    /*public Question selectQuestion(String theme, String difficulte){
+        int indiceListe = 0;
+        for (int i=0; i<themes.nbThemes; i++){
+            if (themes.getNoms()[i] == theme){
+                indiceListe=i;
+            }
+        }
+        ArrayList<Question> listeQuestions = tableauQuestions[indiceListe];
+        ArrayList<Question> selection = null;
+        for (Question q : listeQuestions){
+            if (q.getDifficulte() == difficulte){
+                selection.add(q);
+            }
+        }
+        int max = selection.size();
+        int indice = (int)Math.random()*(max+1);
+        return selection.get(indice);
+
+    }*/
+
 }
