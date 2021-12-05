@@ -12,7 +12,19 @@ public class Joueurs {
 
     public Joueur selectJoueur(){
         int indice = (int)Math.random()*21;
+        while (joueurs[indice].getEtat() != "en attente") {
+            indice +=1;
+        }
+        joueurs[indice].setEtat("sélectionné");
         return joueurs[indice];
+    }
+
+    public static Joueur[] selectJoueurs(int nbJoueurs){
+        Joueur[] result = new Joueur[nbJoueurs];
+        for (Joueur i : result){
+            i = selectJoueur();
+        }
+        return result;
     }
 
     public String toString(){

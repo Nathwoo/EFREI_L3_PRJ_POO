@@ -18,6 +18,19 @@ public class Themes {
         return(indice);
     }
 
+    public String[] selectThemes(int nbThemes){
+       String[] result = new String[nbThemes];
+       for (int i =0; i<nbThemes; i++){
+               while (result[i] == null){
+                   int indiceTheme = selectTheme();
+                   if (indicateurs[indiceTheme] == false){
+                       result[i]=noms[indiceTheme];
+                   }
+               }
+           }
+       return result;
+    }
+
     public String[] getNoms() {
         return noms;
     }

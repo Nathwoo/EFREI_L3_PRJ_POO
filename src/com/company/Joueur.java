@@ -32,4 +32,17 @@ public class Joueur {
     public void updateState(String s){
         etat = s;
     }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public int getScore() {
+        return score;
+    }
 }
+
