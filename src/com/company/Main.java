@@ -143,12 +143,31 @@ public class Main {
         phase1.joueurs = tabJoueurs;
         phase1.themes = themes;
         phase1.tabQuestion = questions;
-        Joueur[] joueursPhase1 = phase1.selectJoueurs();
+        Joueur[] joueursPhase1 = phase1.selectJoueurs(tabJoueurs.joueurs);
         phase1.playPhase(joueursPhase1);
-        for (Joueur i : joueursPhase1){
+
+        /*for (Joueur i : gagnantsPhase1){
             System.out.println(i.toString());
+        }*/
+
+        /*String[] test = themes.selectThemes(5);
+        for (String i : test){
+            System.out.println(i);
+        }*/
+        // PHASE 2
+        Phase2 phase2 = new Phase2();
+        Themes themesPhase2 = new Themes(nomThemes);
+        Themes selectionthemesPhase2 = new Themes(themesPhase2.selectThemes(6));
+        phase2.themes = selectionthemesPhase2;
+        /*for (String i : selectionthemesPhase2.getNoms()){
+            System.out.println(i);
         }
 
+        for (Joueur i : joueursPhase2){
+            System.out.println(i.toString());
+        }*/
+        Joueur[] joueursPhase2 = phase2.selectJoueurs(joueursPhase1);
+        phase2.playPhase(joueursPhase2);
 
     }
 }

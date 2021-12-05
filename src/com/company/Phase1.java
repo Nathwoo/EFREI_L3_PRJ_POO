@@ -11,16 +11,15 @@ public class Phase1 implements Phase{
     public Questions tabQuestion;
 
     @Override
-    public Joueur[] selectJoueurs() {
+    public Joueur[] selectJoueurs(Joueur[] j) {
         Joueur[] selectionJoueurs = joueurs.selectJoueurs(nbJoueurs);
         return selectionJoueurs;
     }
 
     @Override
-    public Joueur[] playPhase(Joueur[] selectionJoueurs) {
+    public void playPhase(Joueur[] selectionJoueurs) {
         System.out.println("PHASE 1\n");
-        Joueur[] result = new Joueur[3];
-
+        // Déroulement des tours
         for (int i=0; i<nbTours; i++){
             System.out.println("TOUR "+(i+1)+"\n");
             int indiceTheme = themes.selectTheme();
@@ -34,6 +33,7 @@ public class Phase1 implements Phase{
                 }
             }
         }
+        // Recherche du perdant et changement d'état
         int scoreMin = selectionJoueurs[0].getScore();
         int indicePerdant = 0;
         //int[] scores = new int[4];
@@ -44,15 +44,19 @@ public class Phase1 implements Phase{
             }
         }
         selectionJoueurs[indicePerdant].setEtat("éliminé");
+        // Changement d'état des gagnants
+        int j = 0;
         for (Joueur i : selectionJoueurs){
-            int j = 0;
             if (i.getEtat() == "sélectionné"){
                 i.setEtat("gagnant");
-                result[j] = i;
                 j+=1;
             }
         }
-        return result;
+        // Affichage des joueurs
+        for (Joueur i : selectionJoueurs){
+            System.out.println(i.toString());
+        }
+        System.out.println("FIN PHASE 1\n");
 
     }
 }

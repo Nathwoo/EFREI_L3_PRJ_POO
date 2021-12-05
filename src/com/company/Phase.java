@@ -4,8 +4,8 @@ public interface Phase {
     int nbJoueurs = 0;
     int nbThemes = 0;
 
-    Joueur[] selectJoueurs();
+    Joueur[] selectJoueurs(Joueur[] joueurs);
 
-    Joueur[] playPhase(Joueur[] joueurs);
+    void playPhase(Joueur[] joueurs);
 
 }
