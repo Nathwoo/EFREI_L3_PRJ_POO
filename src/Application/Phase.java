@@ -1,4 +1,4 @@
-package com.company;
+package Application;
 
 public interface Phase {
     int nbJoueurs = 0;

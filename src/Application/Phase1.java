@@ -1,6 +1,4 @@
-package com.company;
-
-import java.util.ArrayList;
+package Application;
 
 public class Phase1 implements Phase{
     public int nbJoueurs = 4;

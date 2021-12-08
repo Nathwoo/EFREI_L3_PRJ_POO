@@ -1,4 +1,4 @@
-package com.company;
+package Application;
 
 public class QCM extends Question{
     private String reponse1;

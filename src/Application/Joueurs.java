@@ -1,7 +1,8 @@
-package com.company;
+package Application;
 
 public class Joueurs {
-    Joueur[] joueurs;
+    public Joueur[] joueurs;
+    public int nbJoueurs;
 
     public Joueurs(){
         joueurs = new Joueur[20];

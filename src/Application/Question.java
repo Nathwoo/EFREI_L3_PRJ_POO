@@ -1,4 +1,4 @@
-package com.company;
+package Application;
 
 public abstract class Question {
     protected static int nbQuestions;

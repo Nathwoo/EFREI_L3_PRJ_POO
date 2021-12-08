@@ -1,4 +1,4 @@
-package com.company;
+package Application;
 
 public class Phase2 implements Phase{
     public int nbJoueurs=3;

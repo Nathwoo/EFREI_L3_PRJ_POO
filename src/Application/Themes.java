@@ -1,4 +1,4 @@
-package com.company;
+package Application;
 
 public class Themes {
     public final int nbThemes;
@@ -12,12 +12,11 @@ public class Themes {
     }
 
     public int selectTheme(){
-        int max = noms.length;
-        int indice = (int)(Math.random()*max);
+        int indice = (int)(Math.random()*nbThemes);
         while (indicateurs[indice] == true){
 
             indice += 1;
-            if (indice == max){
+            if (indice == nbThemes){
                 indice = 0;
             }
         }
@@ -38,22 +37,11 @@ public class Themes {
         return noms;
     }
 
-    /*public int[] selectFiveThemes(){
-        String[] result = new String[5];
-        for (int i=0; i<5; i++){
-            int indicetheme = selectTheme();
-            boolean nouveau = true;
-            while (nouveau = true){
-                for(int j=0; j<i; j++){
-                    if (result[j] != themes.get(indicetheme)){
-                        continue;
-                    }
-                    else{
-                        nouveau = false;
-
-                    }
-                }
-            }
+    public String toString(){
+        String result = "Liste des thèmes\n";
+        for(int i=0; i<nbThemes; i++){
+            result += noms[i]+" : "+indicateurs[i]+"\n";
         }
-    }*/
+        return result;
+    }
 }

@@ -1,4 +1,4 @@
-package com.company;
+package Application;
 
 public class VF extends Question{
     private boolean bonneReponse;
