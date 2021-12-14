@@ -1,5 +1,7 @@
 package Application;
 
+import java.util.Scanner;
+
 public class Joueur {
     private static int nbJoueurs;
     private int numero;
@@ -48,5 +50,42 @@ public class Joueur {
     public String getNom() {
         return nom;
     }
+
+    public boolean answerQCM(QCM q){
+        System.out.println(q.toString());
+        Scanner scan = new Scanner(System.in);
+        int rep = scan.nextInt();
+        if (rep == q.getBonneReponse()){
+            System.out.println("Bonne réponse !");
+            return true;
+        }
+        System.out.println("Mauvaise réponse");
+        return false;
+    }
+
+    public boolean answerVF(VF q){
+        System.out.println(q.toString());
+        Scanner scan = new Scanner(System.in);
+        String rep = scan.next();
+        if ((rep.equals("V") && q.getBonneReponse()==true) || (rep.equals("F") && q.getBonneReponse()==false)){
+            System.out.println("Bonne réponse !");
+            return true;
+        }
+        System.out.println("Mauvaise réponse");
+        return false;
+    }
+
+    public boolean answerRC(RC q){
+        System.out.println(q.toString());
+        Scanner scan = new Scanner(System.in);
+        String rep = scan.next();
+        if (rep.equals(q.getBonneReponse())){
+            System.out.println("Bonne réponse !");
+            return true;
+        }
+        System.out.println("Mauvaise réponse");
+        return false;
+    }
+
 }
 

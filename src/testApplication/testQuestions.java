@@ -5,7 +5,7 @@ import Application.*;
 public class testQuestions {
     public static void main(String[] args){
         QCM q1 = new QCM();
-        q1.input("Histoire","facile", "Quel célèbre dictateur dirigea l'URSS du milieu des années 1920 à 1953 ?","Staline","Trotski","Lénine","Staline");
+        q1.input("Histoire","facile", "Quel célèbre dictateur dirigea l'URSS du milieu des années 1920 à 1953 ?","Staline","Trotski","Lénine",1);
 
         RC q2 = new RC();
         q2.input("Géographie","facile", "Dans quel pays peut-on trouver la Catalogne, l'Andalousie et la Castille ?","Espagne");
@@ -14,7 +14,7 @@ public class testQuestions {
         q3.input("Musique","facile","Bob Marley a écrit la chanson 'I shot the Sheriff'", true);
 
         QCM q4 = new QCM();
-        q4.input("Histoire","facile", "La première république française a été proclamée en :","1789","1792","1794","1792");
+        q4.input("Histoire","facile", "La première république française a été proclamée en :","1789","1792","1794",2);
 
         String[] nomThemes = new String[]{"Histoire", "Géographie", "Musique"};
         Themes themes = new Themes(nomThemes);

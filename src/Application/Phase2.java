@@ -1,5 +1,5 @@
 package Application;
-
+/*
 public class Phase2 implements Phase{
     public int nbJoueurs=3;
     public String difficulte="facile";
@@ -32,7 +32,7 @@ public class Phase2 implements Phase{
             selectionthemes[i]= new String[]{"",""};
             selectionthemes[i][0]=themes.getNoms()[themes.selectTheme()];
             System.out.println(selectionthemes[i][0]);
-        }*/
+        }
         for (String[] i : selectionthemes){
 
             i[0]=themes.getNoms()[themes.selectTheme()];
@@ -47,4 +47,4 @@ public class Phase2 implements Phase{
                 System.out.println(selectionJoueurs[i].getNom()+" : "+selectionthemes[i][0]+", "+selectionthemes[i][1]);
             }
     }
-}
+}*/

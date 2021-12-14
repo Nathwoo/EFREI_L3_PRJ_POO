@@ -4,15 +4,16 @@ public class Joueurs {
     public Joueur[] joueurs;
     public int nbJoueurs;
 
-    public Joueurs(){
-        joueurs = new Joueur[20];
+    public Joueurs(int nbJoueurs){
+        this.nbJoueurs = nbJoueurs;
+        joueurs = new Joueur[nbJoueurs];
         for (Joueur i : joueurs){
             i = new Joueur();
         }
     }
 
     public Joueur selectJoueur(){
-        int indice = (int)(Math.random()*20);
+        int indice = (int)(Math.random()*nbJoueurs);
         while (joueurs[indice].getEtat() != "en attente") {
             indice +=1;
         }

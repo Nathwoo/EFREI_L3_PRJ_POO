@@ -12,6 +12,10 @@ public class VF extends Question{
     }
 
     public String toString(){
-        return("Question "+numero+" : "+theme+", "+difficulte+", \n"+enonce+"\n Réponse : "+bonneReponse);
+        return("Question "+numero+" : "+theme+", "+difficulte+", \n"+enonce+"\n Réponse (V/F): ");
+    }
+
+    public boolean getBonneReponse() {
+        return bonneReponse;
     }
 }

@@ -13,7 +13,10 @@ public class RC extends Question{
     }
 
     public String toString(){
-        return("Question "+numero+" : "+theme+", "+difficulte+", \n"+enonce+"\n Réponse : "+bonneReponse);
+        return("Question "+numero+" : "+theme+", "+difficulte+", \n"+enonce+"\n Réponse : ");
     }
 
+    public String getBonneReponse(){
+        return bonneReponse;
+    }
 }

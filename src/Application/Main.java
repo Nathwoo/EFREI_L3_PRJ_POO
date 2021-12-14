@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         //  ENREGISTREMENT DES QUESTIONS
         QCM q1 = new QCM();
-        q1.input("Histoire","facile", "Quel célèbre dictateur dirigea l'URSS du milieu des années 1920 à 1953 ?","Staline","Trotski","Lénine","Staline");
+        q1.input("Histoire","facile", "Quel célèbre dictateur dirigea l'URSS du milieu des années 1920 à 1953 ?","Staline","Trotski","Lénine",1);
         //System.out.println(q1.toString());
         RC q2 = new RC();
         q2.input("Géographie","facile", "Dans quel pays peut-on trouver la Catalogne, l'Andalousie et la Castille ?","Espagne");
@@ -14,27 +14,27 @@ public class Main {
         q3.input("Musique","facile","Bob Marley a écrit la chanson 'I shot the Sheriff'", true);
         //System.out.println(q3.toString());
         QCM q4 = new QCM();
-        q4.input("Histoire","facile", "La première république française a été proclamée en :","1789","1792","1794","1792");
+        q4.input("Histoire","facile", "La première république française a été proclamée en :","1789","1792","1794",2);
         QCM q5 = new QCM();
-        q5.input("Sport","facile", "Quel pays a remporté la coupe du monde de football en 2014 ?","Argentine","Italie","Allemagne","Allemagne");
+        q5.input("Sport","facile", "Quel pays a remporté la coupe du monde de football en 2014 ?","Argentine","Italie","Allemagne",3);
         QCM q6 = new QCM();
-        q6.input("Littérature","facile", "Dans quelle ville se déroule la pièce 'Roméo et Juliette' ?","Florence","Venise","Vérone","Vérone");
+        q6.input("Littérature","facile", "Dans quelle ville se déroule la pièce 'Roméo et Juliette' ?","Florence","Venise","Vérone",3);
         QCM q7 = new QCM();
-        q7.input("Sport","facile", "Quel est le sport de prédilection de Rafael Nadal ?","Tennis","Basket","Golf","Tennis");
+        q7.input("Sport","facile", "Quel est le sport de prédilection de Rafael Nadal ?","Tennis","Basket","Golf",1);
         QCM q8 = new QCM();
-        q8.input("Littérature","facile", "Qui était le dieu de la guerre dans la mythologie grecque ?","Arès","Hermès","Hadès","Arès");
+        q8.input("Littérature","facile", "Qui était le dieu de la guerre dans la mythologie grecque ?","Arès","Hermès","Hadès",1);
         QCM q9 = new QCM();
-        q9.input("Géographie","facile", "Quelle est la capitale du Liban ?","Damas","Le Caire","Beyrouth","Beyrouth");
+        q9.input("Géographie","facile", "Quelle est la capitale du Liban ?","Damas","Le Caire","Beyrouth",3);
         QCM q10 = new QCM();
-        q10.input("Musique","facile", "De quel pays les Beatles sont-ils originaires ?","Allemagne","Angleterre","Etats-Unis","Angleterre");
+        q10.input("Musique","facile", "De quel pays les Beatles sont-ils originaires ?","Allemagne","Angleterre","Etats-Unis",2);
         QCM q11 = new QCM();
-        q11.input("Sciences","facile", "Qu'est ce que le chlorure de sodium ?","Du sel","Du sucre","De la farine","Du sel");
+        q11.input("Sciences","facile", "Qu'est ce que le chlorure de sodium ?","Du sel","Du sucre","De la farine",1);
         QCM q12 = new QCM();
-        q12.input("Sciences","facile", "Quelle est, environ, la vitesse de la lumière ?","3000 km/s","33 333 km/s","300 000 km/s","300 000 km/s");
+        q12.input("Sciences","facile", "Quelle est, environ, la vitesse de la lumière ?","3000 km/s","33 333 km/s","300 000 km/s",3);
         QCM q13 = new QCM();
-        q13.input("Cinéma","facile", "Quel acteur joue le héros du film 'Interstellar' ?","Brad Pitt","Matthew MacConaughey","Tom Cruise","Matthew MacConaughey");
+        q13.input("Cinéma","facile", "Quel acteur joue le héros du film 'Interstellar' ?","Brad Pitt","Matthew MacConaughey","Tom Cruise",2);
         QCM q14 = new QCM();
-        q14.input("Cinéma","facile", "En quelle année est sorti le film Titanic ?","1991","1997","2005","1997");
+        q14.input("Cinéma","facile", "En quelle année est sorti le film Titanic ?","1991","1997","2005",2);
 
         //  CREATION DES THEMES
         String[] nomThemes = new String[]{"Histoire", "Géographie", "Musique", "Sport", "Sciences", "Littérature", "Cinéma" };
@@ -106,7 +106,7 @@ public class Main {
 
 
         //  CREATION DU TABLEAU DES JOUEURS
-        Joueurs tabJoueurs = new Joueurs();
+        Joueurs tabJoueurs = new Joueurs(20);
         /*
         for (int i=0; i<tabJoueurs.joueurs.length; i++){
             tabJoueurs.joueurs[i] = new Joueur();
@@ -141,7 +141,7 @@ public class Main {
         phase1.joueurs = tabJoueurs;
         phase1.themes = themes;
         phase1.tabQuestion = questions;
-        Joueur[] joueursPhase1 = phase1.selectJoueurs(tabJoueurs.joueurs);
+        Joueurs joueursPhase1 = phase1.selectJoueurs(tabJoueurs);
         phase1.playPhase(joueursPhase1);
 
         /*for (Joueur i : gagnantsPhase1){
@@ -153,6 +153,7 @@ public class Main {
             System.out.println(i);
         }*/
         // PHASE 2
+        /*
         Phase2 phase2 = new Phase2();
         Themes themesPhase2 = new Themes(nomThemes);
         Themes selectionthemesPhase2 = new Themes(themesPhase2.selectThemes(6));
@@ -163,9 +164,9 @@ public class Main {
 
         for (Joueur i : joueursPhase2){
             System.out.println(i.toString());
-        }*/
+        }
         Joueur[] joueursPhase2 = phase2.selectJoueurs(joueursPhase1);
         phase2.playPhase(joueursPhase2);
-
+        */
     }
 }

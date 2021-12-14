@@ -14,7 +14,7 @@ public class testJoueurs {
         Joueur j4 = new Joueur();
         j4.input("D");
 
-        Joueurs tabJoueurs = new Joueurs();
+        Joueurs tabJoueurs = new Joueurs(4);
         tabJoueurs.joueurs[0] = j1;
         tabJoueurs.joueurs[1] = j2;
         tabJoueurs.joueurs[2] = j3;
