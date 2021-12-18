@@ -15,10 +15,10 @@ public class testJoueurs {
         j4.input("D");
 
         Joueurs tabJoueurs = new Joueurs(4);
-        tabJoueurs.joueurs[0] = j1;
-        tabJoueurs.joueurs[1] = j2;
-        tabJoueurs.joueurs[2] = j3;
-        tabJoueurs.joueurs[3] = j4;
+        tabJoueurs.tableauJoueurs[0] = j1;
+        tabJoueurs.tableauJoueurs[1] = j2;
+        tabJoueurs.tableauJoueurs[2] = j3;
+        tabJoueurs.tableauJoueurs[3] = j4;
         System.out.println(tabJoueurs.toString());
 
         tabJoueurs.selectJoueur();

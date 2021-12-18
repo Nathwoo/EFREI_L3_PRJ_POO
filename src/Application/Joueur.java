@@ -51,39 +51,46 @@ public class Joueur {
         return nom;
     }
 
+    public int getNumero(){
+        return numero;
+    }
+
     public boolean answerQCM(QCM q){
+        System.out.println("Joueur "+numero);
         System.out.println(q.toString());
         Scanner scan = new Scanner(System.in);
         int rep = scan.nextInt();
         if (rep == q.getBonneReponse()){
-            System.out.println("Bonne réponse !");
+            System.out.println("Bonne réponse !\n");
             return true;
         }
-        System.out.println("Mauvaise réponse");
+        System.out.println("Mauvaise réponse\n");
         return false;
     }
 
     public boolean answerVF(VF q){
+        System.out.println("Joueur "+numero);
         System.out.println(q.toString());
         Scanner scan = new Scanner(System.in);
         String rep = scan.next();
         if ((rep.equals("V") && q.getBonneReponse()==true) || (rep.equals("F") && q.getBonneReponse()==false)){
-            System.out.println("Bonne réponse !");
+            System.out.println("Bonne réponse !\n");
             return true;
         }
-        System.out.println("Mauvaise réponse");
+        System.out.println("Mauvaise réponse\n");
         return false;
     }
 
     public boolean answerRC(RC q){
+        System.out.println("Joueur "+numero);
         System.out.println(q.toString());
         Scanner scan = new Scanner(System.in);
         String rep = scan.next();
         if (rep.equals(q.getBonneReponse())){
-            System.out.println("Bonne réponse !");
+            System.out.println("Bonne réponse !\n");
             return true;
         }
-        System.out.println("Mauvaise réponse");
+        System.out.println("Mauvaise réponse\n");
         return false;
     }
 

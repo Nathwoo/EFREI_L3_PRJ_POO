@@ -108,31 +108,31 @@ public class Main {
         //  CREATION DU TABLEAU DES JOUEURS
         Joueurs tabJoueurs = new Joueurs(20);
         /*
-        for (int i=0; i<tabJoueurs.joueurs.length; i++){
-            tabJoueurs.joueurs[i] = new Joueur();
-            tabJoueurs.joueurs[i].input("j"+i);
+        for (int i=0; i<tabJoueurs.tableauJoueurs.length; i++){
+            tabJoueurs.tableauJoueurs[i] = new Joueur();
+            tabJoueurs.tableauJoueurs[i].input("j"+i);
         }
         */
-        tabJoueurs.joueurs[0] = j1;
-        tabJoueurs.joueurs[1] = j2;
-        tabJoueurs.joueurs[2] = j3;
-        tabJoueurs.joueurs[3] = j4;
-        tabJoueurs.joueurs[4] = j5;
-        tabJoueurs.joueurs[5] = j6;
-        tabJoueurs.joueurs[6] = j7;
-        tabJoueurs.joueurs[7] = j8;
-        tabJoueurs.joueurs[8] = j9;
-        tabJoueurs.joueurs[9] = j10;
-        tabJoueurs.joueurs[10] = j11;
-        tabJoueurs.joueurs[11] = j12;
-        tabJoueurs.joueurs[12] = j13;
-        tabJoueurs.joueurs[13] = j14;
-        tabJoueurs.joueurs[14] = j15;
-        tabJoueurs.joueurs[15] = j16;
-        tabJoueurs.joueurs[16] = j17;
-        tabJoueurs.joueurs[17] = j18;
-        tabJoueurs.joueurs[18] = j19;
-        tabJoueurs.joueurs[19] = j20;
+        tabJoueurs.tableauJoueurs[0] = j1;
+        tabJoueurs.tableauJoueurs[1] = j2;
+        tabJoueurs.tableauJoueurs[2] = j3;
+        tabJoueurs.tableauJoueurs[3] = j4;
+        tabJoueurs.tableauJoueurs[4] = j5;
+        tabJoueurs.tableauJoueurs[5] = j6;
+        tabJoueurs.tableauJoueurs[6] = j7;
+        tabJoueurs.tableauJoueurs[7] = j8;
+        tabJoueurs.tableauJoueurs[8] = j9;
+        tabJoueurs.tableauJoueurs[9] = j10;
+        tabJoueurs.tableauJoueurs[10] = j11;
+        tabJoueurs.tableauJoueurs[11] = j12;
+        tabJoueurs.tableauJoueurs[12] = j13;
+        tabJoueurs.tableauJoueurs[13] = j14;
+        tabJoueurs.tableauJoueurs[14] = j15;
+        tabJoueurs.tableauJoueurs[15] = j16;
+        tabJoueurs.tableauJoueurs[16] = j17;
+        tabJoueurs.tableauJoueurs[17] = j18;
+        tabJoueurs.tableauJoueurs[18] = j19;
+        tabJoueurs.tableauJoueurs[19] = j20;
 
         //System.out.println(tabJoueurs.toString());
 
@@ -153,20 +153,21 @@ public class Main {
             System.out.println(i);
         }*/
         // PHASE 2
-        /*
+
         Phase2 phase2 = new Phase2();
         Themes themesPhase2 = new Themes(nomThemes);
-        Themes selectionthemesPhase2 = new Themes(themesPhase2.selectThemes(6));
-        phase2.themes = selectionthemesPhase2;
-        /*for (String i : selectionthemesPhase2.getNoms()){
-            System.out.println(i);
-        }
+        phase2.tabQuestion = questions;
+        phase2.themes = themesPhase2;
+        Joueurs joueursPhase2 = phase2.selectJoueurs(joueursPhase1);
 
-        for (Joueur i : joueursPhase2){
+        phase2.playPhase(joueursPhase2);
+        /*
+
+        for (Joueur i : tableauJoueursPhase2){
             System.out.println(i.toString());
         }
-        Joueur[] joueursPhase2 = phase2.selectJoueurs(joueursPhase1);
-        phase2.playPhase(joueursPhase2);
+        Joueur[] tableauJoueursPhase2 = phase2.selectJoueurs(tableauJoueursPhase1);
+        phase2.playPhase(tableauJoueursPhase2);
         */
     }
 }

@@ -3,7 +3,7 @@ package Application;
 public class Themes {
     public final int nbThemes;
     private String[] noms;
-    private boolean[] indicateurs;
+    public boolean[] indicateurs;
 
     public Themes(String[] noms){
         this.noms = noms;
