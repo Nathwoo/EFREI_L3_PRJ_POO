@@ -43,6 +43,7 @@ public class Joueurs {
         return result;
     }
 
+    //FONCTION DE CHOIX DES THEMES POUR CHAQUE JOUEURS
     public String[][] selectThemes(Themes selectionThemes){
         String[][] choixThemes = new String[nbJoueurs][2];
         Scanner scan = new Scanner(System.in);
