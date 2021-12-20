@@ -2,13 +2,13 @@ package Application;
 
 public class Phase2 implements Phase{
     public int nbJoueurs=3;
-    public String difficulte="facile";
+    public String difficulte="moyen";
     public Themes themes;
     public Questions tabQuestion;
 
     @Override
     public Joueurs selectJoueurs(Joueurs joueursPhase1) {
-        Joueurs selectionJoueurs = new Joueurs(3);
+        Joueurs selectionJoueurs = new Joueurs(nbJoueurs);
         int j = 0;
         for (Joueur i : joueursPhase1.tableauJoueurs){
             if (i.getEtat() == "gagnant"){

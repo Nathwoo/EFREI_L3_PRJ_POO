@@ -2,13 +2,12 @@ package testApplication;
 
 import Application.*;
 
-public class testPhase2 {
+public class testPhase1 {
     public static void main(String[] args){
         //  ENREGISTREMENT DES QUESTIONS
         // Histoire
         QCM q1 = new QCM();
         q1.input("Histoire","facile", "Quel célèbre dictateur dirigea l'URSS du milieu des années 1920 à 1953 ?","Staline","Trotski","Lénine",1);
-        //System.out.println(q1.toString());
         QCM q4 = new QCM();
         q4.input("Histoire","facile", "La première république française a été proclamée en :","1789","1792","1794",2);
         VF q22 = new VF();
@@ -27,47 +26,37 @@ public class testPhase2 {
         q2.input("Géographie","facile", "Dans quel pays peut-on trouver la Catalogne, l'Andalousie et la Castille ?","Espagne");
         QCM q9 = new QCM();
         q9.input("Géographie","facile", "Quelle est la capitale du Liban ?","Damas","Le Caire","Beyrouth",3);
-        RC q27 = new RC();
-        q27.input("Géographie","moyen","Dans quelle ville italienne se trouve la tour Pirelli ?","Milan");
-        VF q28 = new VF();
-        q28.input("Géographie","difficile","La ville de Tunis est surnommée la 'Fiancée de la Méditerranée'.", false);
-        QCM q29 = new QCM();
-        q29.input("Géographie","difficile", "Quel est le chef-lieu du département de l’Allier ?","Vichy","Montluçon","Moulins",3);
-
 
         // Musique
         VF q3 = new VF();
         q3.input("Musique","facile","Bob Marley a écrit la chanson 'I shot the Sheriff'", true);
         QCM q10 = new QCM();
         q10.input("Musique","facile", "De quel pays les Beatles sont-ils originaires ?","Allemagne","Angleterre","Etats-Unis",2);
-        QCM q30 = new QCM();
-        q30.input("Musique","moyen", "Quel est le titre du second album studio de Stromae, sortie en 2013 ?","Pourquoi pas moi","Racine carrée","Formidable",2);
-
 
         // Sport
         QCM q5 = new QCM();
         q5.input("Sport","facile", "Quel pays a remporté la coupe du monde de football en 2014 ?","Argentine","Italie","Allemagne",3);
         QCM q7 = new QCM();
-        q7.input("Sport","moyen", "Quel est le sport de prédilection de Rafael Nadal ?","Tennis","Basket","Golf",1);
+        q7.input("Sport","facile", "Quel est le sport de prédilection de Rafael Nadal ?","Tennis","Basket","Golf",1);
 
         // Littérature
         QCM q6 = new QCM();
         q6.input("Littérature","facile", "Dans quelle ville se déroule la pièce 'Roméo et Juliette' ?","Florence","Venise","Vérone",3);
         QCM q8 = new QCM();
-        q8.input("Littérature","moyen", "Qui était le dieu de la guerre dans la mythologie grecque ?","Arès","Hermès","Hadès",1);
+        q8.input("Littérature","facile", "Qui était le dieu de la guerre dans la mythologie grecque ?","Arès","Hermès","Hadès",1);
 
         // Sciences
         QCM q11 = new QCM();
         q11.input("Sciences","facile", "Qu'est ce que le chlorure de sodium ?","Du sel","Du sucre","De la farine",1);
         QCM q12 = new QCM();
-        q12.input("Sciences","moyen", "Quelle est, environ, la vitesse de la lumière ?","3000 km/s","33 333 km/s","300 000 km/s",3);
+        q12.input("Sciences","facile", "Quelle est, environ, la vitesse de la lumière ?","3000 km/s","33 333 km/s","300 000 km/s",3);
 
 
         // Cinéma
         QCM q13 = new QCM();
         q13.input("Cinéma","facile", "Quel acteur joue le héros du film 'Interstellar' ?","Brad Pitt","Matthew MacConaughey","Tom Cruise",2);
         QCM q14 = new QCM();
-        q14.input("Cinéma","moyen", "En quelle année est sorti le film Titanic ?","1991","1997","2005",2);
+        q14.input("Cinéma","facile", "En quelle année est sorti le film Titanic ?","1991","1997","2005",2);
 
 
         // Economie
@@ -119,42 +108,87 @@ public class testPhase2 {
         questions.addQuestion(q24);
         questions.addQuestion(q25);
         questions.addQuestion(q26);
-        questions.addQuestion(q27);
-        questions.addQuestion(q28);
-        questions.addQuestion(q29);
-        questions.addQuestion(q30);
+
+        //System.out.println(questions.toString());
 
         //  CREATION DES JOUEURS
         Joueur j1 = new Joueur();
         j1.input("A");
+        //System.out.println(j1.toString());
         Joueur j2 = new Joueur();
         j2.input("B");
+        //System.out.println(j2.toString());
         Joueur j3 = new Joueur();
         j3.input("C");
         Joueur j4 = new Joueur();
         j4.input("D");
+        Joueur j5 = new Joueur();
+        j5.input("E");
+        Joueur j6 = new Joueur();
+        j6.input("F");
+        Joueur j7 = new Joueur();
+        j7.input("G");
+        Joueur j8 = new Joueur();
+        j8.input("H");
+        Joueur j9 = new Joueur();
+        j9.input("I");
+        Joueur j10 = new Joueur();
+        j10.input("J");
+        Joueur j11 = new Joueur();
+        j11.input("K");
+        Joueur j12 = new Joueur();
+        j12.input("L");
+        Joueur j13 = new Joueur();
+        j13.input("M");
+        Joueur j14 = new Joueur();
+        j14.input("N");
+        Joueur j15 = new Joueur();
+        j15.input("O");
+        Joueur j16 = new Joueur();
+        j16.input("P");
+        Joueur j17 = new Joueur();
+        j17.input("Q");
+        Joueur j18 = new Joueur();
+        j18.input("R");
+        Joueur j19 = new Joueur();
+        j19.input("S");
+        Joueur j20 = new Joueur();
+        j20.input("T");
 
-        j1.updateState("gagnant");
-        j2.updateState("éliminé");
-        j3.updateState("gagnant");
-        j4.updateState("gagnant");
+
 
         //  CREATION DU TABLEAU DES JOUEURS
-        Joueurs tabJoueurs = new Joueurs(4);
+        Joueurs tabJoueurs = new Joueurs(20);
+
         tabJoueurs.tableauJoueurs[0] = j1;
         tabJoueurs.tableauJoueurs[1] = j2;
         tabJoueurs.tableauJoueurs[2] = j3;
         tabJoueurs.tableauJoueurs[3] = j4;
+        tabJoueurs.tableauJoueurs[4] = j5;
+        tabJoueurs.tableauJoueurs[5] = j6;
+        tabJoueurs.tableauJoueurs[6] = j7;
+        tabJoueurs.tableauJoueurs[7] = j8;
+        tabJoueurs.tableauJoueurs[8] = j9;
+        tabJoueurs.tableauJoueurs[9] = j10;
+        tabJoueurs.tableauJoueurs[10] = j11;
+        tabJoueurs.tableauJoueurs[11] = j12;
+        tabJoueurs.tableauJoueurs[12] = j13;
+        tabJoueurs.tableauJoueurs[13] = j14;
+        tabJoueurs.tableauJoueurs[14] = j15;
+        tabJoueurs.tableauJoueurs[15] = j16;
+        tabJoueurs.tableauJoueurs[16] = j17;
+        tabJoueurs.tableauJoueurs[17] = j18;
+        tabJoueurs.tableauJoueurs[18] = j19;
+        tabJoueurs.tableauJoueurs[19] = j20;
 
+        //System.out.println(tabJoueurs.toString());
 
-        // PHASE 2
-
-        Phase2 phase2 = new Phase2();
-        Themes themesPhase2 = new Themes(nomThemes);
-        phase2.tabQuestion = questions;
-        phase2.themes = themesPhase2;
-        Joueurs joueursPhase2 = phase2.selectJoueurs(tabJoueurs);
-
-        phase2.playPhase(joueursPhase2);
+        // PHASE 1
+        Phase1 phase1 = new Phase1();
+        phase1.joueurs = tabJoueurs;
+        phase1.themes = themes;
+        phase1.tabQuestion = questions;
+        Joueurs joueursPhase1 = phase1.selectJoueurs(tabJoueurs);
+        phase1.playPhase(joueursPhase1);
     }
 }
