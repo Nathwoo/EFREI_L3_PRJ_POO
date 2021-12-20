@@ -73,7 +73,7 @@ public class Joueur {
         System.out.println(q.toString());
         Scanner scan = new Scanner(System.in);
         String rep = scan.next();
-        if ((rep.equals("V") && q.getBonneReponse()==true) || (rep.equals("F") && q.getBonneReponse()==false)){
+        if ((rep.equalsIgnoreCase("V") && q.getBonneReponse()==true) || (rep.equalsIgnoreCase("F") && q.getBonneReponse()==false)){
             System.out.println("Bonne réponse !\n");
             return true;
         }
@@ -86,7 +86,7 @@ public class Joueur {
         System.out.println(q.toString());
         Scanner scan = new Scanner(System.in);
         String rep = scan.next();
-        if (rep.equals(q.getBonneReponse())){
+        if (rep.equalsIgnoreCase(q.getBonneReponse())){
             System.out.println("Bonne réponse !\n");
             return true;
         }

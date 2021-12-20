@@ -88,7 +88,7 @@ public class testPhase2 {
 
 
         //  CREATION DES THEMES
-        String[] nomThemes = new String[]{"Histoire", "Géographie", "Musique", "Sport", "Sciences", "Littérature", "Cinéma", "Economie"}; //, "Politique", "Cuisine"
+        String[] nomThemes = new String[]{"Histoire", "Géographie", "Musique", "Sport", "Sciences", "Littérature", "Cinéma", "Economie"};
         Themes themes = new Themes(nomThemes);
 
         //  CREATION DE LA LISTE DES QUESTIONS

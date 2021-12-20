@@ -5,12 +5,15 @@ import java.util.ArrayList;
 public class Questions {
     Themes themes;
     ArrayList[] tableauQuestions;
+    ArrayList[] indicateurs;
 
     public Questions(Themes themes){
         this.themes = themes;
         tableauQuestions = new ArrayList[themes.nbThemes];
+        indicateurs = new ArrayList[themes.nbThemes];
         for (int i=0; i< themes.nbThemes; i++){
             tableauQuestions[i] = new ArrayList<Question>();
+            indicateurs[i] = new ArrayList<String>();
         }
     }
 
@@ -20,6 +23,7 @@ public class Questions {
             i+=1;
         }
         tableauQuestions[i].add(q);
+        indicateurs[i].add("disponible");
     }
 
     public void deleteQuestion(String nomTheme, int indice){
@@ -28,6 +32,7 @@ public class Questions {
             i+=1;
         }
         tableauQuestions[i].remove(indice);
+        indicateurs[i].remove(indice);
     }
 
     public String toString(){
@@ -42,38 +47,23 @@ public class Questions {
         return result;
     }
 
-    public Question selectQuestion(int indiceListe, String difficulte){
+    public Question selectQuestion(int indiceListe,String difficulte){
         ArrayList<Question> listeQuestions = tableauQuestions[indiceListe];
         ArrayList<Question> selection = new ArrayList();
-        for (Question q : listeQuestions){
-            if (q.getDifficulte() == difficulte){
-                selection.add(q);
+        for (int i=0; i<listeQuestions.size(); i++){
+            if (listeQuestions.get(i).getDifficulte().equals(difficulte) && indicateurs[indiceListe].get(i).equals("disponible")){
+                selection.add(listeQuestions.get(i));
             }
         }
         int max = selection.size();
-        int indice = (int)(Math.random()*max);
-        return selection.get(indice);
+        int indiceQuestion = (int)(Math.random()*max);
+        for (int i=0; i<listeQuestions.size(); i++){
+            if (listeQuestions.get(i) == selection.get(indiceQuestion)){
+                indicateurs[indiceListe].set(i,"indisponible");
+            }
+        }
+        return selection.get(indiceQuestion);
 
     }
-
-    /*public Question selectQuestion(String theme, String difficulte){
-        int indiceListe = 0;
-        for (int i=0; i<themes.nbThemes; i++){
-            if (themes.getNoms()[i] == theme){
-                indiceListe=i;
-            }
-        }
-        ArrayList<Question> listeQuestions = tableauQuestions[indiceListe];
-        ArrayList<Question> selection = null;
-        for (Question q : listeQuestions){
-            if (q.getDifficulte() == difficulte){
-                selection.add(q);
-            }
-        }
-        int max = selection.size();
-        int indice = (int)Math.random()*(max+1);
-        return selection.get(indice);
-
-    }*/
 
 }
